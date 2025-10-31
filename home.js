@@ -42,6 +42,17 @@ document.getElementById("add-money")
             form.style.display = "none";
         }
         document.getElementById("add-money-form").style.display = "block";
+
+        let formBtns = document.getElementsByClassName("form-btn")
+
+        for (let btn of formBtns) {
+            btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]");
+            btn.classList.add("border-[#0808081a]")
+        }
+
+        document.getElementById("add-money").classList.remove("border-[#0808081a]");
+
+        document.getElementById("add-money").classList.add("border-[#0874f2]", "bg-[#0874f20d]");
     })
 
 // cash out button
@@ -55,6 +66,17 @@ document.getElementById("cashout")
             form.style.display = "none";
         }
         document.getElementById("cashout-form").style.display = "block";
+
+        let formBtns = document.getElementsByClassName("form-btn")
+
+        for (let btn of formBtns) {
+            btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]");
+            btn.classList.add("border-[#0808081a]")
+        }
+
+        document.getElementById("cashout").classList.remove("border-[#0808081a]");
+
+        document.getElementById("cashout").classList.add("border-[#0874f2]", "bg-[#0874f20d]");
     })
 
 // transfer money button
@@ -68,6 +90,17 @@ document.getElementById("transfer-money")
             form.style.display = "none";
         }
         document.getElementById("transfer-money-form").style.display = "block";
+
+        let formBtns = document.getElementsByClassName("form-btn")
+
+        for (let btn of formBtns) {
+            btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]");
+            btn.classList.add("border-[#0808081a]")
+        }
+
+        document.getElementById("transfer-money").classList.remove("border-[#0808081a]");
+
+        document.getElementById("transfer-money").classList.add("border-[#0874f2]", "bg-[#0874f20d]");
     })
 
 // get bousos
@@ -81,6 +114,17 @@ document.getElementById("get-bounos")
             form.style.display = "none";
         }
         document.getElementById("bonus-form").style.display = "block";
+
+        let formBtns = document.getElementsByClassName("form-btn")
+
+        for (let btn of formBtns) {
+            btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]");
+            btn.classList.add("border-[#0808081a]")
+        }
+
+        document.getElementById("get-bounos").classList.remove("border-[#0808081a]");
+
+        document.getElementById("get-bounos").classList.add("border-[#0874f2]", "bg-[#0874f20d]");
     })
 
 // pay bill
@@ -93,7 +137,20 @@ document.getElementById("pay-bill")
             form.style.display = "none";
         }
         document.getElementById("bill-form").style.display = "block";
+
+        let formBtns = document.getElementsByClassName("form-btn")
+
+        for (let btn of formBtns) {
+            btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]");
+            btn.classList.add("border-[#0808081a]")
+        }
+
+        document.getElementById("pay-bill").classList.remove("border-[#0808081a]");
+
+        document.getElementById("pay-bill").classList.add("border-[#0874f2]", "bg-[#0874f20d]");
     })
+
+// toggleing features
 
 // withdraw btn
 
@@ -150,6 +207,8 @@ document.getElementById("transfer-money-btn")
         let newAvailableBalance = availableBalance - transferAmount;
         document.getElementById("available-balance").innerText = newAvailableBalance;
 
+        let transferAmount2 = document.getElementById("transfer-amount")
+        transferAmount2.value = "";
 
     })
 
@@ -186,12 +245,12 @@ document.getElementById("get-bounos-btn")
 
     })
 
-    // bill btn
+// bill btn
 
-    document.getElementById("bill-btn")
-    .addEventListener('click', function(e) {
+document.getElementById("bill-btn")
+    .addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         let bill = document.getElementById("bill").value;
         let billerAccountNumber = document.getElementById("biller-account-number").value;
         let billAmount = parseInt(document.getElementById("bill-amount").value);
@@ -199,12 +258,12 @@ document.getElementById("get-bounos-btn")
 
         let availableBalance = parseInt(document.getElementById("available-balance").innerText);
 
-        if(billerAccountNumber.length < 11) {
+        if (billerAccountNumber.length < 11) {
             alert("Please provid a valid biller account number.")
             return;
         }
 
-        if(billPin != vlaidPin) {
+        if (billPin != vlaidPin) {
             alert("Please provid a valid pin number.")
         }
 
