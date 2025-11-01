@@ -150,6 +150,28 @@ document.getElementById("pay-bill")
         document.getElementById("pay-bill").classList.add("border-[#0874f2]", "bg-[#0874f20d]");
     })
 
+    // Transactions
+
+document.getElementById("transactions")
+    .addEventListener('click', function () {
+
+        let forms = document.getElementsByClassName("form");
+        for (let form of forms) {
+            form.style.display = "none";
+        }
+        document.getElementById("transaction-form").style.display = "block";
+
+        let formBtns = document.getElementsByClassName("form-btn");
+        for (let btn of formBtns) {
+            btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]");
+            btn.classList.add("border-[#0808081a]");
+        }
+
+        document.getElementById("transactions").classList.remove("border-[#0808081a]");
+        document.getElementById("transactions").classList.add("border-[#0874f2]", "bg-[#0874f20d]");
+    });
+
+
 // toggleing features
 
 // withdraw btn
